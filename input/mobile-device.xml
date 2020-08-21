@@ -1241,7 +1241,10 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
+	      
+	      
         <f-component cc-id="fau_sar.1" name="Audit Review" status="objective">
           <f-element>
             <title>The TSF shall provide <refinement>the administrator</refinement> with the
@@ -1261,7 +1264,9 @@ How is it differenet then me using subsection?
                 test for function <ctr-ref ref-id="auditLogs"/> of FMT_SMF_EXT.1. </Tests>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
+	      
         <f-component cc-id="fau_sel.1" name="Selective Audit" status="objective">
           <f-element>
             <title>The TSF shall be able to select the set of events to be audited from the set of
@@ -1301,7 +1306,11 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event type="optional">
+		  <audit-event-descr>All modifications to the audit configuration that occur while the audit collection functions are operating.</audit-event-descr>
+	  </audit-event>
         </f-component>
+	      
         <f-component cc-id="fau_stg.1" name="Audit Storage Protection">
           <f-element>
             <title>The TSF shall protect the stored audit records in the audit trail from
@@ -1326,7 +1335,9 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+  	  <audit-event/>
         </f-component>
+	      
         <f-component cc-id="fau_stg.4" name="Prevention of Audit Data Loss">
           <f-element>
             <title>The TSF shall overwrite the oldest stored audit records if the audit trail is
@@ -1338,8 +1349,11 @@ How is it differenet then me using subsection?
                 action(s) results in the deletion or overwrite of the oldest stored record.</TSS>
             </aactivity>
           </f-element>
-        </f-component>
+	<audit-event/>
+        </f-component>  
       </subsection>
+	    
+	    
       <subsection id="fcs" title="Class: Cryptographic Support (FCS)"> 
         This section describes how keys are generated, derived, combined, released and destroyed. There are two major types of keys: DEKs and KEKs. (A REK is considered a KEK.) DEKs are used to protect data (as in the DAR protection described in FDP_DAR_EXT.1 and FDP_DAR_EXT.2). KEKs are used to protect other keys – DEKs, other KEKs, and other types of keys stored by the user or applications. The following diagram shows an example key hierarchy to illustrate the concepts of this profile. This example is not meant as an approved design, but ST authors will be expected to provide a diagram illustrating their key hierarchy in order to demonstrate that they meet the requirements of this profile. Please note if a BAF is selected in FIA_UAU.5.1, the BAF shall be illustrated in the key hierarchy diagram, to include a description of when and how the BAF is used to release keys. If "hybrid" is selected in FIA_UAU.5.1, meaning that a PIN or password must be used in conjunction with the BAF this interaction shall be included.<htm:br/>
         <figure entity="images/figure3.jpg" title="An Illustrative Key Hierarchy" id="Keys"/>
@@ -1520,7 +1534,11 @@ How is it differenet then me using subsection?
                 FCS_CKM.2/UNLOCKED. </Tests>
             </aactivity>
           </f-element>
+	<audit-event type="optional">
+		<audit-event-descr>Failure of key generation activity for authentication keys.</audit-event-descr>
+	</audit-event>
         </f-component>
+	      
         <f-component cc-id="fcs_ckm.2" iteration="UNLOCKED" name="Cryptographic key establishment">
           <f-element>
             <title>The TSF shall <refinement>perform</refinement> cryptographic <refinement>key
@@ -1697,8 +1715,10 @@ How is it differenet then me using subsection?
                 "safe-prime" group that each protocol uses. </Tests>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
-        <f-component cc-id="fcs_ckm.2" iteration="LOCKED" name="Cryptographic key establishment">
+
+	<f-component cc-id="fcs_ckm.2" iteration="LOCKED" name="Cryptographic key establishment">
           <f-element>
             <title>The TSF shall <refinement>perform</refinement> cryptographic <refinement>key
                 establishment</refinement> in accordance with a specified cryptographic key
@@ -1767,7 +1787,9 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
+	      
         <f-component cc-id="fcs_ckm_ext.1" name="Extended: Cryptographic Key Support">
           <f-element id="fel-mut-hard">
             <title>The TSF shall support <selectables>
@@ -1838,7 +1860,11 @@ How is it differenet then me using subsection?
               </TSS>
             </aactivity>
           </f-element>
+	  <audit-event type="optional">
+		  <audit-event-descr>Generation of an REK.</audit-event-descr>
+	  </audit-event>
         </f-component>
+	      
         <f-component cc-id="fcs_ckm_ext.2" name="Extended: Cryptographic Key Random Generation">
           <f-element>
             <title>All DEKs shall be <selectables>
@@ -2077,7 +2103,9 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+  	  <audit-event/>
         </f-component>
+	      
         <f-component cc-id="fcs_ckm_ext.3" name="Extended: Cryptographic Key Generation">
           <f-element>
             <title>The TSF shall use <selectables>
@@ -2339,7 +2367,9 @@ How is it differenet then me using subsection?
                 same inputs to a known good implementation. </Tests>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
+	      
         <f-component cc-id="fcs_ckm_ext.4" name="Extended: Key Destruction">
           <f-element>
             <title>The TSF shall destroy cryptographic keys in accordance with the specified cryptographic key destruction methods: <htm:br/>
@@ -2504,7 +2534,9 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
+	      
         <f-component cc-id="fcs_ckm_ext.5" name="Extended: TSF Wipe">
           <f-element>
             <title>The TSF shall wipe all protected data by <selectables linebreak="yes">
@@ -2555,7 +2587,11 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event>
+		  <audit-event-descr>Failure of the wipe.</audit-event-descr>
+	  </audit-event>
         </f-component>
+	      
         <f-component cc-id="fcs_ckm_ext.6" name="Extended: Salt Generation">
           <f-element>
             <title>The TSF shall generate all salts using a RBG that meets FCS_RBG_EXT.1. </title>
@@ -2583,7 +2619,9 @@ How is it differenet then me using subsection?
                 conjunction with FCS_CKM_EXT.3.2. </TSS>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
+	      
         <f-component cc-id="fcs_ckm_ext.7" name="Extended: Cryptographic Key Support (REK)" status="sel-based">
           <selection-depends req="fel-mut-hard" ids="mutable_hardware"/>
           <f-element>
@@ -2598,7 +2636,9 @@ How is it differenet then me using subsection?
                 Evaluation Activity for FCS_CKM_EXT.1. </Tests>
             </aactivity>
           </f-element>
+	  <audit-event />
         </f-component>
+	      
         <f-component cc-id="fcs_cop.1" name="Cryptographic operation" iteration="ENCRYPT">
           <f-element>
             <title>The TSF shall perform encryption/decryption in accordance with a specified
@@ -2864,7 +2904,9 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event />
         </f-component>
+	      
         <f-component cc-id="fcs_cop.1" name="Cryptographic operation" iteration="HASH">
           <f-element>
             <title>The TSF shall perform <refinement>cryptographic hashing</refinement> in
@@ -2957,7 +2999,9 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
+	      
         <f-component cc-id="fcs_cop.1" name="Cryptographic operation" iteration="SIGN">
           <f-element>
             <title>The TSF shall perform <refinement>cryptographic signature services (generation
@@ -3026,7 +3070,9 @@ How is it differenet then me using subsection?
                 these errors. </Tests>
             </aactivity>
           </f-element>
+	  <audit-event />
         </f-component>
+	      
         <f-component cc-id="fcs_cop.1" name="Cryptographic operation" iteration="KEYHMAC">
           <f-element>
             <title>The TSF shall perform <refinement>keyed-hash message authentication</refinement>
@@ -3063,7 +3109,9 @@ How is it differenet then me using subsection?
                 implementation.</Tests>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
+	      
         <f-component cc-id="fcs_cop.1" name="Cryptographic operation" iteration="CONDITION">
           <f-element>
             <title>The TSF shall perform <refinement>conditioning</refinement> in accordance with a
@@ -3112,7 +3160,22 @@ How is it differenet then me using subsection?
               </TSS>
             </aactivity>
           </f-element>
+	  <audit-event />
         </f-component>
+	      
+	<!-- This handles audit events added to SFRs that are imported from modules/packages -->
+	<!-- For now status is optional. It may end up being sel-based or mandatory. 
+		as it is actually included based on a selection in FCS_TLS_EXT.1.1 in the TLS package. -->
+	<!-- So we probably need a way to express this. -->
+	<!-- Assuming this should be the client protocol (FCS_DTLSC_EXT.1) -->
+	<f-component-decl cc-id="fcs_dtlsc_ext.1" name="DTLS Client Protocol" status="optional" pkg-id="pkg_tls">
+		<!-- ??? <selection-depends ext="pkg-tls" req="fcs-tls-ext-1e1" ids="sel-dtls-client"/>  ????   -->
+		<audit-event>
+			<audit-event-descr>Failure of the certificate validity check.</audit-event-descr>
+			<audit-event-info>Issuer Name and Subject Name of certificate.</audit-event-info>
+		</audit-event>
+	</f-component-decl>
+	      
         <f-component cc-id="fcs_https_ext.1" name="Extended: HTTPS Protocol">
           <f-element>
             <title>The TSF shall implement the HTTPS protocol that complies with RFC 2818. </title>
@@ -3168,7 +3231,13 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event>
+		  <audit-event-descr>Failure of the certificate validity check.</audit-event-descr>
+		  <audit-event-info>Issuer Name and Subject Name of certificate</audit-event-info>
+		  <audit-event-info type="optional">User's authorization decision.</audit-event-info>
+	  </audit-event>
         </f-component>
+	      
         <f-component cc-id="fcs_iv_ext.1" name="Extended: Initialization Vector Generation">
           <f-element>
             <title>The TSF shall generate IVs in accordance with <ctr-ref ref-id="ivtable"/>:
@@ -3185,7 +3254,9 @@ How is it differenet then me using subsection?
                 encrypted by the same KEK meets FCS_IV_EXT.1. </TSS>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
+	      
         <f-component cc-id="fcs_rbg_ext.1" name="Extended: Cryptographic Operation (Random Bit Generation)">
           <f-element>
             <title>The TSF shall perform all deterministic random bit generation services in
@@ -3290,7 +3361,11 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event type="optional">
+		  <audit-event-descr>Failure of the randomization process.</audit-event-descr>
+	  </audit-event>		
         </f-component>
+	      
         <f-component cc-id="fcs_rbg_ext.2" name="Extended: Cryptographic Operation (Random Bit Generation)" status="objective">
           <f-element>
             <title>The TSF shall save the state of the deterministic RBG at power-off, and shall use
@@ -3310,7 +3385,9 @@ How is it differenet then me using subsection?
                 state while the TOE is powered off. </TSS>
             </aactivity>
           </f-element>
+	  <audit-event />
         </f-component>
+	      
         <f-component cc-id="fcs_rbg_ext.3" name="Extended: Cryptographic Operation (Random Bit Generation)" status="objective">
           <f-element>
             <title>The TSF shall allow applications to add data to the deterministic RBG using the
@@ -3332,7 +3409,9 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event />
         </f-component>
+	      
         <f-component cc-id="fcs_srv_ext.1" name="Extended: Cryptographic Algorithm Services">
           <f-element>
             <title>The TSF shall provide a mechanism for applications to request the TSF to perform
@@ -3380,7 +3459,9 @@ How is it differenet then me using subsection?
                 requirements. </Tests>
             </aactivity>
           </f-element>
+	  <audit-event />
         </f-component>
+	      
         <f-component cc-id="fcs_srv_ext.2" name="Extended: Cryptographic Algorithm Services" status="objective">
           <f-element>
             <title>The TSF shall provide a mechanism for applications to request the TSF to perform
@@ -3401,8 +3482,51 @@ How is it differenet then me using subsection?
                 Activities in FCS_STG_EXT.1. </Tests>
             </aactivity>
           </f-element>
+	  <audit-event />
         </f-component>
+	      
+	<!-- This handles audit events added to SFRs that are imported from modules/packages -->
+	<!-- For now status is optional. It may end up being sel-based or mandatory. 
+		as it is actually included based on a selection in FCS_TLS_EXT.1.1 in the TLS package. -->
+	<!-- So we probably need a way to express this. -->
+	<f-component-decl cc-id="fcs_tlsc_ext.1" name="TLS Client Protocol" status="optional" pkg-id="pkg_tls">
+		<!-- ??? <selection-depends ext="pkg-tls" req="fcs-tls-ext-1e1" ids="sel-tls-client"/>  ????   -->
+		<audit-event>
+			<audit-event-descr>Establishment/termination of a TLS session.</audit-event-descr>
+			<audit-event-info>Non-TOE endpoint of connection.</audit-event-info>
+		</audit-event>
+		<audit-event>
+			<audit-event-descr>Failure to establish a TLS session.</audit-event-descr>
+			<audit-event-info>Reason for failure.</audit-event-info>
+		</audit-event>
+		<audit-event>
+			<audit-event-descr>Failure to verify presented identifier.</audit-event-descr>
+			<audit-event-info>Presented identifier and reference identifier.</audit-event-info>
+		</audit-event>
+	</f-component-decl>
+
+	<!-- This handles audit events added to SFRs that are imported from modules/packages -->
+	<!-- For now status is optional. It may end up being sel-based or mandatory. 
+		as it is actually included based on a selection in FCS_TLS_EXT.1.1 in the TLS package. -->
+	<!-- So we probably need a way to express this. -->
+	<f-component-decl cc-id="fcs_tlsc_ext.1" name="TLS Client Protocol" status="optional" pkg-id="pkg_tls">
+		<!-- ??? <selection-depends ext="pkg-tls" req="fcs-tls-ext-1e1" ids="sel-tls-client"/>  ????   -->
+		<audit-event>
+			<audit-event-descr>Establishment/termination of a TLS session.</audit-event-descr>
+			<audit-event-info>Non-TOE endpoint of connection.</audit-event-info>
+		</audit-event>
+		<audit-event>
+			<audit-event-descr>Failure to establish a TLS session.</audit-event-descr>
+			<audit-event-info>Reason for failure.</audit-event-info>
+		</audit-event>
+		<audit-event>
+			<audit-event-descr>Failure to verify presented identifier.</audit-event-descr>
+			<audit-event-info>Presented identifier and reference identifier.</audit-event-info>
+		</audit-event>
+	</f-component-decl>
+	      
       </subsection>
+	    
       <subsection title="Cryptographic Storage (FCS_STG)" id="FCS_STG">
           The following requirements describe how keys are protected. All keys
           must ultimately be protected by a REK, and may optionally be protected by the user’s
@@ -3552,7 +3676,12 @@ How is it differenet then me using subsection?
                 </Tests>
               </aactivity>
             </f-element>
+	    <audit-event>
+		    <audit-event-descr>Addition or removal of certificate from Trust Anchor Database.</audit-event-descr>
+		    <audit-event-info>Subject name of certificate.</audit-event-info>
+	    </audit-event>
           </f-component>
+	      
           <f-component cc-id="fcs_stg_ext.2" name="Extended: Encrypted Cryptographic Key Storage">
             <f-element>
               <title>The TSF shall encrypt all DEKs, KEKs, <assignable>any long-term trusted channel
@@ -3642,7 +3771,9 @@ How is it differenet then me using subsection?
                   FCS_STG_EXT.2.</TSS>
               </aactivity>
             </f-element>
+	  <audit-event/>
           </f-component>
+	      
           <f-component cc-id="fcs_stg_ext.3" name="Extended: Integrity of encrypted key storage">
             <f-element>
               <title>The TSF shall protect the integrity of any encrypted DEKs and KEKs and <selectables>
@@ -3693,8 +3824,13 @@ How is it differenet then me using subsection?
                   options in FCS_STG_EXT.3. </TSS>
               </aactivity>
             </f-element>
+	   <audit-event>
+		   <audit-event-descr>Faiure to verify integrity of stored key.</audit-event-descr>
+		   <audit-event-info>Identity of key being verified.</audit-event-info>
+	   </audit-event>
           </f-component>
         </subsection>
+	    
 	    <subsection id="fdp" title="Class: User Data Protection (FDP)">
 	  <htm:p>
 	    A subset of the User Data Protection focuses on protecting Data-At-Rest, namely FDP_DAR_EXT.1 and FDP_DAR_EXT.2.
@@ -3845,7 +3981,9 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
+		    
         <f-component cc-id="fdp_acf_ext.2" name="Extended: Security access control" status="sel-based">
           <selection-depends req="fel-acp" ids="fdp_group"/>
           <f-element>
@@ -3871,7 +4009,9 @@ How is it differenet then me using subsection?
                 information and verify that it cannot access the information. </Tests>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
+		    
         <f-component cc-id="fdp_acf_ext.3" name="Extended: Security attribute based access control" status="objective">
           <f-element>
             <title>The TSF shall enforce an access control policy that prohibits an application from
@@ -3900,7 +4040,9 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event />
         </f-component>
+		    
         <f-component cc-id="fdp_bck_ext.1" name="Extended: Application Backup" status="objective">
           <f-element>
             <title>The TSF shall provide a mechanism for applications to mark <selectables>
@@ -3927,7 +4069,9 @@ How is it differenet then me using subsection?
                 selected data is excluded from the backup. </Tests>
             </aactivity>
           </f-element>
+	  <audit-event />
         </f-component>
+		    
         <f-component cc-id="fdp_pba_ext.1" name="Extended: Storage of Critical Biometric Parameters" status="sel-based">
           <selection-depends req="fel-uau"
             ids="uau_fing,uau_iris,uau_face,uau_vox,uau_vein,uau_hybr"/>
@@ -3952,6 +4096,7 @@ How is it differenet then me using subsection?
                 PIN or by other secure means, as specified by the vendor.</TSS>
             </aactivity>
           </f-element>
+	  <audit-event />
         </f-component>
 	
         <f-component cc-id="fdp_dar_ext.1" name="Extended: Protected Data Encryption">
@@ -3998,7 +4143,11 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event type="optional">
+		  <audit-event-descr>Failure to encrypt/decrypt data.</audit-event-descr>
+	  </audit-event>
         </f-component>
+		    
         <f-component cc-id="fdp_dar_ext.2" name="Extended: Sensitive Data Encryption">
           <f-element>
             <title>The TSF shall provide a mechanism for applications to mark data and keys as
@@ -4110,7 +4259,11 @@ How is it differenet then me using subsection?
                 unlocked. </TSS>
             </aactivity>
           </f-element>
+  	  <audit-event>
+		  <audit-event-descr>Failure to encrypt/decrypt data.</audit-event-descr>
+	  </audit-event>
         </f-component>
+		    
         <f-component cc-id="fdp_ifc_ext.1" name="Extended: Subset information flow control">
           <f-element>
             <title>The TSF shall <selectables linebreak="yes">
@@ -4198,7 +4351,9 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
+		    
         <f-component cc-id="fdp_stg_ext.1" name="Extended: User Data Storage">
           <f-element>
             <title>The TSF shall provide protected storage for the Trust Anchor Database. </title>
@@ -4211,7 +4366,12 @@ How is it differenet then me using subsection?
                 and FMT_MOF_EXT.1.1.</TSS>
             </aactivity>
           </f-element>
+	  <audit-event>
+		  <audit-event-descr>Addition or removal of certificate from Trust Anchor Database.</audit-event-descr>
+		  <audit-event-info>Subject name of certificate.</audit-event-info>
+	  </audit-event>
         </f-component>
+		    
         <f-component cc-id="fdp_upc_ext.1" iteration="NORMAL" name="Extended: Inter-TSF user data transfer protection">
           <f-element>
             <title>The TSF shall provide a means for non-TSF applications executing on the TOE to use <htm:ul>
@@ -4302,7 +4462,14 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event>
+		  <audit-event-descr>Application initiation of trusted channel.</audit-event-descr>
+		  <audit-event-info>Name of application.</audit-event-info>
+		  <audit-event-info>Trusted channel protocol.</audit-event-info>
+		  <audit-event-info>Non-TOE endpoint of connection.</audit-event-info>
+	  </audit-event>
         </f-component>
+		    
         <f-component cc-id="fdp_upc_ext.1" iteration="BLUETOOTH" name="Extended: Inter-TSF user data transfer protection - Bluetooth" status="feat-based"> <!-- Implementation Dependent -->
           <depends on="implements"><ref-id>bluetooth</ref-id></depends>       
           <f-element>
@@ -4366,8 +4533,15 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event>
+		<audit-event-descr>Application initiation of trusted channel.	</audit-event-descr>
+		<audit-event-info>Name of application. </audit-event-info>
+		<audit-event-info>Trusted channel protocol.</audit-event-info>
+		<audit-event-info>Non-TOE endpoint of connection.</audit-event-info>
+	  </audit-event>
         </f-component>
       </subsection>
+	    
       <subsection id="fia" title="Class: Identification and Authentication (FIA)">
         <f-component cc-id="fia_afl_ext.1" name="Extended: Authentication failure handling">
           <f-element>
@@ -4520,7 +4694,12 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event type="optional">
+		  <audit-event-descr>Excess of authentication failure limit.</audit-event-descr>
+		  <audit-event-info>Authentication factor used.</audit-event-info>
+	  </audit-event>
         </f-component>
+	      
         <f-component cc-id="fia_bmg_ext.1" name="Extended: Accuracy of Biometric Authentication" status="sel-based">
           <selection-depends req="fel-uau"
             ids="uau_fing,uau_iris,uau_face,uau_vox,uau_vein,uau_hybr"/>
@@ -4630,7 +4809,9 @@ How is it differenet then me using subsection?
               </TSS>
             </aactivity>
           </f-element>
+	<audit-event/>
         </f-component>
+	      
         <f-component cc-id="fia_bmg_ext.2" name="Extended: Biometric Enrollment" status="objective">
           <f-element>
             <title>The TSF shall only use biometric samples of sufficient quality for enrollment.
@@ -4663,7 +4844,9 @@ How is it differenet then me using subsection?
                 than the prescribed threshold are rejected.</Tests>
             </aactivity>
           </f-element>
+	<audit-event />
         </f-component>
+	      
         <f-component cc-id="fia_bmg_ext.3" name="Extended: Biometric Verification" status="objective">
           <f-element>
             <title>The TSF shall only use biometric samples of sufficient quality for verification.
@@ -4686,7 +4869,9 @@ How is it differenet then me using subsection?
                 worse quality score than the prescribed threshold are rejected. </TSS>
             </aactivity>
           </f-element>
+	  <audit-event />
         </f-component>
+	      
         <f-component cc-id="fia_bmg_ext.4" name="Extended: Biometric Templates" status="objective">
           <f-element>
             <title>The TSF shall only generate and use enrollment templates and/or authentication
@@ -4717,7 +4902,9 @@ How is it differenet then me using subsection?
                 person).</TSS>
             </aactivity>
           </f-element>
+	  <audit-event />
         </f-component>
+	      
         <f-component cc-id="fia_bmg_ext.5" name="Extended: Handling Unusual Biometric Templates" status="objective">
           <f-element>
             <title>The matching algorithm shall handle properly formatted enrollment templates
@@ -4749,7 +4936,9 @@ How is it differenet then me using subsection?
                 testing based on test programs provided by the vendor.</TSS>
             </aactivity>
           </f-element>
+	</audit-event />
         </f-component>
+	      
         <f-component cc-id="fia_bmg_ext.6" name="Extended: Spoof Detections for Biometrics" status="objective">
           <f-element>
             <title>The TSF shall perform Presentation Attack Detection testing up to the attack
@@ -4811,7 +5000,9 @@ How is it differenet then me using subsection?
                 spoof kits and recipes from specialized biometrics testing labs.</Tests>
             </aactivity>
           </f-element>
+	<audit-event />
         </f-component>
+	      
         <f-component cc-id="fia_pmg_ext.1" name="Extended: Password Management">
           <f-element>
             <title>The TSF shall support the following for the Password Authentication Factor: <htm:ol>
@@ -4865,7 +5056,9 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	<audit-event />
         </f-component>
+	      
         <f-component cc-id="fia_trt_ext.1" name="Extended: Authentication Throttling">
           <f-element>
             <title>The TSF shall limit automated user authentication attempts by <selectables>
@@ -4890,7 +5083,9 @@ How is it differenet then me using subsection?
                 selected in FIA_UAU.5.1.</TSS>
             </aactivity>
           </f-element>
+	<audit-event />
         </f-component>
+	      
         <f-component cc-id="fia_uau.5" name="Multiple Authentication Mechanisms">
           <f-element id="fel-uau">
             <title>The TSF shall provide <refinement>password and <selectables>
@@ -4950,7 +5145,9 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	<audit-event />
         </f-component>
+	      
         <f-component cc-id="fia_uau.6" name="Re-Authentication">
           <f-element>
             <title>The TSF shall re-authenticate the user <refinement>via the Password
@@ -5018,7 +5215,11 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+  	  <audit-event type="optional">
+		<audit-event-descr>User changes Password Authentication Factor.</audit-event-descr>
+	</audit-event>
         </f-component>
+	      
         <f-component cc-id="fia_uau.7" name="Protected Authentication Feedback ">
           <f-element>
             <title>The TSF shall provide only <refinement>obscured feedback to the device’s
@@ -5060,7 +5261,9 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	<audit-event />
         </f-component>
+	      
         <f-component cc-id="fia_uau_ext.1" name="Extended: Authentication for Cryptographic Operation">
           <f-element>
             <title>The TSF shall require the user to present the Password Authentication Factor
@@ -5118,7 +5321,9 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	<audit-event/>
         </f-component>
+	      
         <f-component cc-id="fia_uau_ext.2" name="Extended: Timing of Authentication">
           <f-element>
             <title>The TSF shall allow <selectables>
@@ -5145,7 +5350,11 @@ How is it differenet then me using subsection?
                 succeed. </Tests>
             </aactivity>
           </f-element>
+  	  <audit-event type="optional">
+		<audit-event-descr>Action performed before authentication.</audit-event-descr>
+	  </audit-event>
         </f-component>
+	      
         <f-component cc-id="fia_uau_ext.4" name="Extended: Secondary User Authentication" status="optional">
           <f-element>
             <title>The TSF shall provide a secondary authentication mechanism for accessing
@@ -5189,7 +5398,9 @@ How is it differenet then me using subsection?
                 accordance with FCS_STG_EXT.2.</TSS>
             </aactivity>
           </f-element>
+	<audit-event />
         </f-component>
+	      
         <f-component cc-id="fia_x509_ext.1" name="Extended: X.509 Validation of certificates">
           <f-element>
             <title>The TSF shall validate certificates in accordance with the following rules: <htm:ul>
@@ -5292,7 +5503,12 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event>
+		  <audit-event-descr>Failure to validate X.509v3 certificate.</audit-event-descr>
+		  <audit-event-info>Reason for failure of validation.</audit-event-info>
+	  </audit-event>
         </f-component>
+	      
         <f-component cc-id="fia_x509_ext.2" name="Extended: X.509 certificate authentication">
           <f-element id="fel-cert-auth">
             <title>The TSF shall use X.509v3 certificates as defined by RFC 5280 to support
@@ -5366,7 +5582,11 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event type="optional">
+		  <audit-event-descr>Failure to establish connection to determine revocation status.</audit-event-descr>
+	  </audit-event>
         </f-component>
+	      
         <f-component cc-id="fia_x509_ext.3" name="Extended: Request Validation of certificates">
           <f-element>
             <title>The TSF shall provide a certificate validation service to applications. </title>
@@ -5389,7 +5609,9 @@ How is it differenet then me using subsection?
                 by FDP_STG_EXT.1, FTP_ITC_EXT.1, FMT_SMF_EXT.1.1, and FIA_X509_EXT.1.</Tests>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
+	      
         <f-component cc-id="fia_x509_ext.4" name="Extended: X509 certificate enrollment" status="objective">
           <f-element>
             <title>The TSF shall use the Enrollment over Secure Transport (EST) protocol as
@@ -5514,7 +5736,23 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event type="optional">
+		  <audit-event-descr>Generation of Certificate Enrollment Request.</audit-event-decr>
+		  <audit-event-info>Issuer and Subject name of EST Server.</audit-event-info>
+		  <audit-event-info>Method of authentication.</audit-event-info>
+		  <audit-event-info>Issuer and Subject name of certificate used to authenticate.</audit-event-info>
+		  <audit-event-info>Content of Certificate Request Message.</audit-event-info>
+	  </audit-event>
+	  <audit-event type="optional">
+		  <audit-event-descr>Success or failure of enrollment.</audit-event-decr>
+		  <audit-event-info>Issuer and Subject name of added certificate or reason for failure.</audit-event-info>
+	  </audit-event>
+	  <audit-event type="optional">
+		  <audit-event-descr>Update of EST Trust Anchor Database.</audit-event-decr>
+		  <audit-event-info>Subject name of added Root CA.</audit-event-info>
+	  </audit-event>
         </f-component>
+	      
         <f-component cc-id="fia_x509_ext.5" name="Extended: X509 certificate enrollment" status="objective">
           <f-element>
             <title>The TSF shall generate a Certificate Request Message as specified in RFC 2986 and
@@ -5562,8 +5800,11 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
+	      
       </subsection>
+	    
       <subsection id="fmt" title="Class: Security Management (FMT)"> 
         Both the user and the administrator may manage the TOE. This administrator is likely to be acting remotely and could be the Mobile Device Management (MDM) Administrator acting through an MDM Agent. <htm:br/><htm:br/> 
         The Administrator is responsible for management activities, including setting the policy that is applied by the enterprise on the Mobile Device. These management functions are likely to be a different set than those management functions provided to the user. Management functions that are provided to the user and not the administrator are listed in FMT_MOF_EXT.1.1. Management functions for which the administrator may adopt a policy that restricts the user from performing that function are listed in FMT_MOF_EXT.1.2. <htm:br/><htm:br/> 
@@ -5646,7 +5887,9 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
+	      
         <f-component cc-id="fmt_smf_ext.1" name="Extended: Specification of Management Functions">
           <f-element>
             <title>The TSF shall be capable of performing the following management functions: <htm:br/><htm:br/>
@@ -6777,7 +7020,31 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event type="optional">
+		<audit-event-descr>Initiation of policy update.</audit-event-descr>
+		<audit-event-info type="optional">Policy name</audit-event-info>
+	  </audit-event>
+	  <audit-event type="optional">
+		<audit-event-descr>Change of settings.</audit-event-descr>
+		<audit-event-info type="optional">Role of user that changed setting</audit-event-info>
+		<audit-event-info type="optional">Value of new setting</audit-event-info>
+	  </audit-event>
+	  <audit-event type="optional">
+		<audit-event-descr>Success or failure of function</audit-event-descr>
+		<audit-event-info type="optional">Role of user that performed function</audit-event-info>
+		<audit-event-info type="optional">Function performed</audit-event-info>
+		<audit-event-info type="optional">Reason for failure</audit-event-info>
+	  </audit-event>
+	  <audit-event type="optional">
+		<audit-event-descr>Initiation of software update.</audit-event-descr>
+		<audit-event-info type="optional">Version of update.</audit-event-info>
+	  </audit-event>
+	  <audit-event type="optional">
+		<audit-event-descr>Initiation of application installation or update.</audit-event-descr>
+		<audit-event-info type="optional">Name and version of application.</audit-event-info>
+	  </audit-event>
         </f-component>
+	      
         <f-component cc-id="fmt_smf_ext.2" name="Extended: Specification of Remediation Actions">
           <f-element>
             <title>The TSF shall offer <selectables>
@@ -6830,7 +7097,20 @@ How is it differenet then me using subsection?
                 be an application with administrator access.</Tests>
             </aactivity>
           </f-element>
+	  <audit-event type="optional">
+		<audit-event-descr>Unenrollment</audit-event-descr>
+		<audit-event-info type="optional">Identity of administrator</audit-event-info>
+		<audit-event-info type="optional">Remediation action performed</audit-event-info>
+		<audit-event-info type="optional">Failure of accepting command to unenroll</audit-event-info>
+	  </audit-event>
+	  <audit-event type="optional">
+		<audit-event-descr>Initiation of unenrollment</audit-event-descr>
+		<audit-event-info type="optional">Identity of administrator</audit-event-info>
+		<audit-event-info type="optional">Remediation action performed</audit-event-info>
+		<audit-event-info type="optional">Failure of accepting command to unenroll</audit-event-info>
+	  </audit-event>		
         </f-component>
+	      
         <f-component cc-id="fmt_smf_ext.3" name="Extended: Current Administrator" status="objective">
           <f-element>
             <title>The TSF shall provide a mechanism that allows users to view a list of currently
@@ -6843,8 +7123,10 @@ How is it differenet then me using subsection?
                 is authorized to perform.</Tests>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
       </subsection>
+	    
       <subsection id="fpt" title="Class: Protection of the TSF (FPT)">
         <f-component cc-id="fpt_aex_ext.1" name="Extended: Anti-Exploitation Services (ASLR)">
           <f-element>
@@ -6879,7 +7161,9 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
+	      
         <f-component cc-id="fpt_aex_ext.2" name="Extended: Anti-Exploitation Services (Memory Page Permissions)">
           <f-element>
             <title>The TSF shall be able to enforce read, write, and execute permissions on every
@@ -6890,7 +7174,9 @@ How is it differenet then me using subsection?
                 read, write, and execute permissions on all pages of virtual memory. </TSS>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
+	      
         <f-component cc-id="fpt_aex_ext.3" name="Extended: Anti-Exploitation Services (Overflow Protection)">
           <f-element>
             <title>TSF processes that execute in a non-privileged execution domain on the
@@ -6912,7 +7198,9 @@ How is it differenet then me using subsection?
                 not protected in this manner. </TSS>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
+	      
         <f-component cc-id="fpt_aex_ext.4" name="Extended: Domain Isolation">
           <f-element>
             <title>The TSF shall protect itself from modification by untrusted subjects. </title>
@@ -6993,7 +7281,9 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
+	      
         <f-component cc-id="fpt_aex_ext.5" name="Extended: Anti-Exploitation Services (ASLR)" status="objective">
           <f-element>
             <title>The TSF shall provide address space layout randomization (ASLR) to the kernel.
@@ -7021,7 +7311,9 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
+	      
         <f-component cc-id="fpt_aex_ext.6" name="Extended: Anti-Exploitation Services (Memory Page Permissions)" status="objective">
           <f-element>
             <title>The TSF shall prevent write and execute permissions from being simultaneously
@@ -7045,7 +7337,9 @@ How is it differenet then me using subsection?
                 allocated to them. </TSS>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
+	      
         <f-component cc-id="fpt_aex_ext.7" name="Extended: Anti-Exploitation Services (Overflow Protection)" status="objective">
           <f-element>
             <title>The TSF shall include heap-based buffer overflow protections in the runtime
@@ -7072,7 +7366,9 @@ How is it differenet then me using subsection?
                 allowed. </Tests>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
+	      
         <f-component cc-id="fpt_bbd_ext.1" name="Extended: Application Processor Mediation" status="objective">
           <f-element>
             <title>The TSF shall prevent code executing on any baseband processor (BP) from
@@ -7114,7 +7410,9 @@ How is it differenet then me using subsection?
                 design prevents modification of executable memory of the AP by the BP.</TSS>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
+	      
         <f-component cc-id="fpt_blt_ext.1" name="Extended: Limitation of Bluetooth Profile Support" status="objective">
           <f-element>
             <title>The TSF shall disable support for <assignable>list of Bluetooth
@@ -7153,7 +7451,9 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
+	      
         <f-component cc-id="fpt_jta_ext.1" name="Extended: JTAG Disablement">
           <f-element>
             <title>The TSF shall <selectables>
@@ -7181,7 +7481,9 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
+	      
         <f-component cc-id="fpt_kst_ext.1" name="Extended: Key Storage">
           <f-element>
             <title>The TSF shall not store any plaintext key material in readable non-volatile
@@ -7229,7 +7531,9 @@ How is it differenet then me using subsection?
                 storage.</TSS>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
+	      
         <f-component cc-id="fpt_kst_ext.2" name="Extended: No Key Transmission">
           <f-element>
             <title>The TSF shall not transmit any plaintext key material outside the security
@@ -7277,7 +7581,9 @@ How is it differenet then me using subsection?
                 outside the security boundary of the TOE.</TSS>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
+	      
         <f-component cc-id="fpt_kst_ext.3" name="Extended: No Plaintext Key Export">
           <f-element>
             <title>The TSF shall ensure it is not possible for the TOE user(s) to export plaintext
@@ -7293,7 +7599,9 @@ How is it differenet then me using subsection?
                 key storage. </TSS>
             </aactivity>
           </f-element>
+	  <audit-event/>
         </f-component>
+	      
         <f-component cc-id="fpt_not_ext.1" name="Extended: Self-Test Notification">
           <f-element>
             <title>The TSF shall transition to non-operational mode and <selectables>
@@ -7329,7 +7637,12 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
-        </f-component>
+	  <audit-event type="optional">
+		  <audit-event-descr>Measurement of TSF software</audit-event>
+		  <audit-event-info type="optional">Integrity verification value</audit-event-info>
+	  </audit-event>
+	</f-component>
+	      
         <f-component cc-id="fpt_not_ext.2" name="Extended: Self-Test Notification" status="objective">
           <f-element>
             <title>The TSF shall <selectables>
@@ -7387,7 +7700,9 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event />
         </f-component>
+	      
         <f-component cc-id="fpt_stm.1" name="Reliable time stamps">
           <f-element>
             <title>The TSF shall be able to provide reliable time stamps for its own use. </title>
@@ -7408,7 +7723,9 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event />
         </f-component>
+	      
         <f-component cc-id="fpt_tst_ext.1" name="Extended: TSF Cryptographic Functionality Testing">
           <f-element>
             <title>The TSF shall run a suite of self-tests during initial start-up (on power on) to
@@ -7434,7 +7751,15 @@ How is it differenet then me using subsection?
                 algorithm self-tests will typically be conducted using known answer tests. </TSS>
             </aactivity>
           </f-element>
+	  <audit-event>
+		  <audit-event-descr>Initiation of self-test.</audit-event-descr>
+	  </audit-event>
+	  <audit-event>
+		  <audit-event-descr>Failure of self-test.</audit-event-descr>
+		  <audit-event-info type="optional">Algorithm that caused the failure</audit-event-info>
+	  </audit-event>
         </f-component>
+	      
         <f-component cc-id="fpt_tst_ext.2" name="Extended: TSF Integrity Checking" iteration="PREKERNEL">
           <f-element>
             <title>The TSF shall verify the integrity of the bootchain up through the Application
@@ -7505,7 +7830,15 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event>
+		  <audit-event-descr>Start-up of TOE.</audit-event-descr>
+	  </audit-event>
+	  <audit-event type="optional">
+		  <audit-event-descr>Detected integrity violation.</audit-event-descr>
+		  <audit-event-info type="optional">The TSF code file that caused the integrity violation.</audit-event-info>
+	  </audit-event>
         </f-component>
+	      
         <f-component cc-id="fpt_tst_ext.2" name="Extended: TSF Integrity Checking" status="objective" iteration="POSTKERNEL">
           <f-element>
             <title>The TSF shall verify the integrity of <selectables>
@@ -7534,7 +7867,12 @@ How is it differenet then me using subsection?
                 for all executable code specified. </Tests>
             </aactivity>
           </f-element>
+	  <audit-event>
+		  <audit-event-descr>Detected integrity violation.</audit-event-descr>
+		  <audit-event-info type="optional">The TSF code file that caused the integrity violation.</audit-event-info>
+	  </audit-event>
         </f-component>
+	      
         <f-component cc-id="fpt_tst_ext.3" name="Extended: TSF Integrity Testing" status="sel-based">
           <selection-depends req="fel-cert-auth" ids="x509_sign"/>
           <f-element>
@@ -7549,7 +7887,9 @@ How is it differenet then me using subsection?
                 Activities for FPT_TST_EXT.2.1/PREKERNEL. </Tests>
             </aactivity>
           </f-element>
-        </f-component>
+	   <audit-event/>
+      </f-component>
+	      
         <f-component cc-id="fpt_tud_ext.1" name="Extended: Trusted Update: TSF version query">
           <f-element>
             <title>The TSF shall provide authorized users the ability to query the current version
@@ -7587,7 +7927,9 @@ How is it differenet then me using subsection?
                 device. </Tests>
             </aactivity>
           </f-element>
+	  <audit-event />
         </f-component>
+	      
         <f-component cc-id="fpt_tud_ext.2" name="Extended: TSF Update Verification">
           <f-element>
             <title>The TSF shall verify software updates to the Application Processor system
@@ -7705,7 +8047,14 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event type="optional">
+		  <audit-event-descr>Success or failure of signature verification for software updates.</audit-event-descr>
+	  </audit-event>
+	  <audit-event type="optional">
+		  <audit-event-descr>Success or failure of signature verification for applications.</audit-event-descr>
+	  </audit-event>
         </f-component>
+	      
         <f-component cc-id="fpt_tud_ext.3" name="Extended: Trusted Update Verification" status="sel-based">
           <selection-depends req="fel-cert-auth" ids="x509_sys,x509_apps"/>
           <f-element>
@@ -7722,7 +8071,9 @@ How is it differenet then me using subsection?
                 Activities for FPT_TUD_EXT.2.3 and FPT_TUD_EXT.4.1. </Tests>
             </aactivity>
           </f-element>
+	  <audit-event />
         </f-component>
+	      
         <f-component cc-id="fpt_tud_ext.4" name="Extended: Application Verification" status="objective">
           <f-element>
             <title>The TSF shall by default only install mobile applications cryptographically
@@ -7761,7 +8112,9 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event />
         </f-component>
+	      
         <f-component cc-id="fpt_tud_ext.5" name="Extended: Trusted Update Verification" status="objective">
           <f-element>
             <title>The TSF shall verify that software updates to the TSF are a current or later
@@ -7789,8 +8142,10 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event />
         </f-component>
       </subsection>
+	    
       <subsection id="fta" title="Class: TOE Access (FTA)">
         <f-component cc-id="fta_ssl_ext.1" name="Extended: TSF- and User-initiated Locked State ">
           <f-element>
@@ -7834,7 +8189,9 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event />
         </f-component>
+	      
         <f-component cc-id="fta_tab.1" name="Default TOE Access Banners" status="objective">
           <f-element>
             <title>Before establishing a user session, the TSF shall display an advisory warning
@@ -7855,7 +8212,9 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
-        </f-component>
+	  <audit-event/>
+      </f-component>
+	      
       </subsection>
       <subsection id="ftp" title="Class: Trusted Path/Channels (FTP)">
         <!-- BT Module: This component was split into 1.1 & 1.1/BR, 1.2/BR (now mandatory) & 1.1/LE,1.2/LE (sel-based). I agree with the split. Overall requirement is the same -->
@@ -7992,6 +8351,11 @@ How is it differenet then me using subsection?
               </Tests>
             </aactivity>
           </f-element>
+	  <audit-event type="optional">
+		  <audit-event-descr>Initiation and termination of trusted channel.</audit-event-descr>
+		  <audit-event-info>Trusted channel protocol.</audit-event-info>
+		  <audit-event-info>Non-TOE endpoint of connection.</audit-event-info>
+	  </audit-event>		  
         </f-component>
       </subsection>
     </section>
