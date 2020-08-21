@@ -171,7 +171,7 @@ How is it differenet then me using subsection?
   <!-- Preferences -->		
   <pp-preferences>
 	<pp-pref name="display-audit-with-sfrs">0</pp-pref>  <!-- Display audit events with SFRs in html -->
-	<pp-pref name="audit-events-in-sfrs">0</pp-pref>     <!-- Specify audit events with SFRs -->
+	<pp-pref name="audit-events-in-sfrs">1</pp-pref>     <!-- Specify audit events with SFRs. Also causes display in appendixes. -->
   </pp-preferences>
 
 	
@@ -587,6 +587,7 @@ How is it differenet then me using subsection?
       </cclaim>
     </cclaims>
   </chapter>
+	
   <chapter title="Security Problem Description" id="spd" boilerplate="no">
     <section title="Threats" id="thr"> Mobile devices are subject to the threats of traditional
       computer systems along with those entailed by their mobile nature. The threats considered in
@@ -712,6 +713,7 @@ How is it differenet then me using subsection?
         </threat>
       </threats>
     </section>
+	  
     <section title="Assumptions" id="assp"> The specific conditions listed below are assumed to
       exist in the TOE’s Operational Environment. These include both practical realities in the
       development of the TOE security requirements and the essential environmental conditions on the
@@ -756,6 +758,7 @@ How is it differenet then me using subsection?
       There are no OSPs for the Mobile Device. 
     </section>
   </chapter>
+	
   <chapter title="Security Objectives" id="sobj" boilerplate="no">
     <section title="Security Objectives for the TOE" id="sot"> 
       <SOs>
@@ -872,6 +875,7 @@ How is it differenet then me using subsection?
       </SO>
       </SOs>
     </section>
+	  
     <section title="Security Objectives for the Operational Environment" id="sooe"> 
       The following
       security objectives for the operational environment assist the OS in correctly providing its
@@ -891,9 +895,12 @@ How is it differenet then me using subsection?
         </SOE>
       </SOEs>
     </section>
+	  
     <section title="Security Objectives Rationale" id="SOR"/><!-- Note: This section is supposed to be empty and is populated from the rationale tags in the other sections --> 
   </chapter>
+	
   <chapter id="sr" title="Security Requirements">
+	  
     <section title="Security Functional Requirements" id="sfr"> 
       <!-- The individual security functional requirements are specified in the sections below. <htm:br/><htm:br/> -->
       <!-- The following conventions are used for the completion of operations:<htm:br/> -->
@@ -909,6 +916,13 @@ How is it differenet then me using subsection?
       <!--   <htm:li>An identifier following a slash after an SFR name, e.g. /EXAMPLE, indicates the -->
       <!--     completion of an iteration.</htm:li> -->
       <!-- </htm:ul> -->
+
+      <!-- This displays the audit table for mandatory SFRs at the start of the SFR section -->
+      <!-- It doesn't have to be this way. -->
+      <subsection title="Auditable Events for Mandatory SFRs" id="ss-audit-events">
+	<audit-table table="mandatory"/>
+      </subsection>
+
       <subsection id="fau" title="Class: Security Audit (FAU)">
         <f-component cc-id="fau_gen.1" name="Audit Data Generation">
           <f-element>
@@ -929,7 +943,7 @@ How is it differenet then me using subsection?
                       <selectable>no additional auditable events</selectable>
                     </selectables></refinement></htm:li>
               </htm:ol>
-              <htm:table>
+<!--              <htm:table>
                 <htm:tr class="header"><htm:td>Requirement</htm:td><htm:td>Auditable Events</htm:td><htm:td>Additional Audit Record Contents</htm:td></htm:tr>
                 <htm:tr><htm:td>FAU_GEN.1</htm:td><htm:td>None.</htm:td><htm:td/></htm:tr>
                 <htm:tr><htm:td>FAU_STG.1</htm:td><htm:td>None.</htm:td><htm:td/></htm:tr>
@@ -1155,6 +1169,7 @@ How is it differenet then me using subsection?
                     channel.</htm:td><htm:td>Trusted channel protocol. Non-TOE endpoint of
                     connection.</htm:td></htm:tr>
               </htm:table>
+-->
               <htm:br/>
               <htm:b><ctr ctr-type="Table" id="objaudit">: Additional Auditable
               Events</ctr></htm:b><htm:br/>
