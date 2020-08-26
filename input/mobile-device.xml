@@ -5759,11 +5759,11 @@ How is it differenet then me using subsection?
 		  <audit-event-info>Content of Certificate Request Message.</audit-event-info>
 	  </audit-event>
 	  <audit-event type="optional">
-		  <audit-event-descr>Success or failure of enrollment.</audit-event-decr>
+		  <audit-event-descr>Success or failure of enrollment.</audit-event-descr>
 		  <audit-event-info>Issuer and Subject name of added certificate or reason for failure.</audit-event-info>
 	  </audit-event>
 	  <audit-event type="optional">
-		  <audit-event-descr>Update of EST Trust Anchor Database.</audit-event-decr>
+		  <audit-event-descr>Update of EST Trust Anchor Database.</audit-event-descr>
 		  <audit-event-info>Subject name of added Root CA.</audit-event-info>
 	  </audit-event>
         </f-component>
