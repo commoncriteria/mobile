@@ -921,6 +921,7 @@ How is it differenet then me using subsection?
       <!-- It doesn't have to be this way. -->
       <subsection title="Auditable Events for Mandatory SFRs" id="ss-audit-events">
 	<audit-table table="mandatory"/>
+        <htm:b><ctr ctr-type="Table" id="manaudit">: Auditable Events for Mandatory Requirements</ctr></htm:b><htm:br/>
       </subsection>
 
       <subsection id="fau" title="Class: Security Audit (FAU)">
@@ -934,13 +935,17 @@ How is it differenet then me using subsection?
                 <htm:li><refinement>Start-up and shutdown of the Rich OS</refinement></htm:li>
                 <htm:li><refinement>Insertion or removal of removable media</refinement></htm:li>
                 <htm:li><refinement>Specifically defined auditable events in <ctr-ref ref-id="manaudit"/></refinement></htm:li>
+                <htm:li><refinement>Specifically defined auditable events selected from <ctr-ref ref-id="optaudit"/>
+			by the ST author corresponding to optional requirements included in the Security Target.</refinement></htm:li>
+                <htm:li><refinement>Specifically defined auditable events selected from <ctr-ref ref-id="objaudit"/>
+			by the ST author corresponding to objective requirements included in the Security Target.</refinement></htm:li>
+                <htm:li><refinement>Specifically defined auditable events selected from <ctr-ref ref-id="sbaudit"/>
+			by the ST author corresponding to selection-based requirements included in the Security Target.</refinement></htm:li>
+                <htm:li><refinement>Specifically defined auditable events selected from <ctr-ref ref-id="ibaudit"/>
+			by the ST author corresponding to implementation-based requirements included in the Security Target.</refinement></htm:li>
                 <htm:li><refinement><selectables>
                       <selectable>Audit records reaching <assignable>integer value less than 100</assignable> percentage of audit capacity</selectable>
                       <selectable><assignable>other auditable events derived from this profile</assignable></selectable>
-                    </selectables></refinement></htm:li>
-                <htm:li><refinement><selectables>
-                      <selectable>Specifically defined auditable event in <ctr-ref ref-id="objaudit" /></selectable>
-                      <selectable>no additional auditable events</selectable>
                     </selectables></refinement></htm:li>
               </htm:ol>
 <!--              <htm:table>
@@ -1169,19 +1174,19 @@ How is it differenet then me using subsection?
                     channel.</htm:td><htm:td>Trusted channel protocol. Non-TOE endpoint of
                     connection.</htm:td></htm:tr>
               </htm:table>
--->
               <htm:br/>
               <htm:b><ctr ctr-type="Table" id="objaudit">: Additional Auditable
               Events</ctr></htm:b><htm:br/>
+-->
             </title>
             <note role="application"> Administrator actions are defined as functions labeled as
               mandatory for FMT_MOF_EXT.1.2 (i.e. ‘M-MM’ in <ctr-ref ref-id="fmt_smf"/>). If the TSF
               does not support removable media, number 4 is implicitly met. <htm:br/><htm:br/> The
               TSF shall generate an audit record for all events contained in <ctr-ref
-                ref-id="manaudit"/>. Generating audit records for events in <ctr-ref ref-id="objaudit"
-              /> is currently objective. It is acceptable to include individual SFRs from <ctr-ref
-                ref-id="objaudit"/> in the ST, without including the entirety of <ctr-ref
-                ref-id="objaudit"/>. <htm:br/><htm:br/>
+                ref-id="manaudit"/> unless an ST author selection allows otherwise. <htm:br/><htm:br/>
+		All auditable events in <ctr-ref ref-id="opaudit"/>, <ctr-ref ref-id="objaudit"/>,
+		    <ctr-ref ref-id="sbaudit"/>, and <ctr-ref ref-id="sbaudit"/> are individually selectable by the ST author,
+		    and are considered to be objective. <htm:br/><htm:br/>
               <htm:b><ctr-ref ref-id="manaudit"/> Application Note:</htm:b><htm:br/> FPT_TST_EXT.1 –
               Audit of self-tests is required only at initial start-up. Since the TOE "transitions
               to non-operational mode" upon failure of a self-test, per FPT_NOT_EXT.1, this is
@@ -1203,12 +1208,8 @@ How is it differenet then me using subsection?
                 <htm:li>Type of event</htm:li>
                 <htm:li>Subject identity</htm:li>
                 <htm:li>The outcome (success or failure) of the event</htm:li>
-                <htm:li>Additional information in <ctr-ref ref-id="manaudit"/></htm:li>
-                <htm:li>
-                  <selectables>
-                    <selectable>Additional information in <ctr-ref ref-id="objaudit"/></selectable>
-                    <selectable> no additional information</selectable>
-                  </selectables></htm:li>
+		<htm:li>Additional information as specified in the "Additional Audit Record Contents" field of
+			the corresponding audit table entry.</htm:li>
               </htm:ol>
             </title>
             <note role="application"> The subject identity is usually the process name/ID. The event
@@ -3184,7 +3185,7 @@ How is it differenet then me using subsection?
 	<!-- So we probably need a way to express this. -->
 	<!-- Assuming this should be the client protocol (FCS_DTLSC_EXT.1) -->
 	<f-component-decl cc-id="fcs_dtlsc_ext.1" name="DTLS Client Protocol" status="optional" pkg-id="pkg_tls">
-		<!-- ??? <selection-depends ext="pkg-tls" req="fcs-tls-ext-1e1" ids="sel-dtls-client"/>  ????   -->
+		<selection-depends req="fcs-tls-ext-1e1" ids="sel-dtls-client"/>  <!-- the ids must correspond with the selection id in the tls package -->
 		<audit-event>
 			<audit-event-descr>Failure of the certificate validity check.</audit-event-descr>
 			<audit-event-info>Issuer Name and Subject Name of certificate.</audit-event-info>
@@ -3505,7 +3506,7 @@ How is it differenet then me using subsection?
 		as it is actually included based on a selection in FCS_TLS_EXT.1.1 in the TLS package. -->
 	<!-- So we probably need a way to express this. -->
 	<f-component-decl cc-id="fcs_tlsc_ext.1" name="TLS Client Protocol" status="optional" pkg-id="pkg_tls">
-		<!-- ??? <selection-depends ext="pkg-tls" req="fcs-tls-ext-1e1" ids="sel-tls-client"/>  ????   -->
+		<selection-depends req="fcs-tls-ext-1e1" ids="sel-tls-client"/>  <!-- ids must correspond with selection id from tls package   -->
 		<audit-event>
 			<audit-event-descr>Establishment/termination of a TLS session.</audit-event-descr>
 			<audit-event-info>Non-TOE endpoint of connection.</audit-event-info>
@@ -3525,7 +3526,7 @@ How is it differenet then me using subsection?
 		as it is actually included based on a selection in FCS_TLS_EXT.1.1 in the TLS package. -->
 	<!-- So we probably need a way to express this. -->
 	<f-component-decl cc-id="fcs_tlsc_ext.1" name="TLS Client Protocol" status="optional" pkg-id="pkg_tls">
-		<!-- ??? <selection-depends ext="pkg-tls" req="fcs-tls-ext-1e1" ids="sel-tls-client"/>  ????   -->
+		<selection-depends req="fcs-tls-ext-1e1" ids="sel-tls-client"/>  <!-- ids must correspond to selection id in tls package   -->
 		<audit-event>
 			<audit-event-descr>Establishment/termination of a TLS session.</audit-event-descr>
 			<audit-event-info>Non-TOE endpoint of connection.</audit-event-info>
