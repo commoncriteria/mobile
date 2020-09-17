@@ -921,7 +921,7 @@ How is it differenet then me using subsection?
       <!-- It doesn't have to be this way. -->
       <subsection title="Auditable Events for Mandatory SFRs" id="ss-audit-events">
 	<audit-table table="mandatory"/>
-        <htm:b><ctr ctr-type="Table" id="at-mandatory">: Auditable Events for Mandatory Requirements</ctr></htm:b><htm:br/>
+        <htm:b><ctr ctr-type="Table" id="atref-mandatory">: Auditable Events for Mandatory Requirements</ctr></htm:b><htm:br/>
       </subsection>
 
       <subsection id="fau" title="Class: Security Audit (FAU)">
@@ -934,14 +934,14 @@ How is it differenet then me using subsection?
                 <htm:li><refinement>All administrative actions</refinement></htm:li>
                 <htm:li><refinement>Start-up and shutdown of the Rich OS</refinement></htm:li>
                 <htm:li><refinement>Insertion or removal of removable media</refinement></htm:li>
-                <htm:li><refinement>Specifically defined auditable events in <ctr-ref ref-id="at-mandatory"/></refinement></htm:li>
-                <htm:li><refinement>Specifically defined auditable events selected from <ctr-ref ref-id="at-optional"/>
+                <htm:li><refinement>Specifically defined auditable events in <ctr-ref ref-id="atref-mandatory"/></refinement></htm:li>
+                <htm:li><refinement>Specifically defined auditable events selected from <ctr-ref ref-id="atref-optional"/>
 			by the ST author corresponding to optional requirements included in the Security Target.</refinement></htm:li>
-                <htm:li><refinement>Specifically defined auditable events selected from <ctr-ref ref-id="at-objective"/>
+                <htm:li><refinement>Specifically defined auditable events selected from <ctr-ref ref-id="atref-objective"/>
 			by the ST author corresponding to objective requirements included in the Security Target.</refinement></htm:li>
-                <htm:li><refinement>Specifically defined auditable events selected from <ctr-ref ref-id="at-sel-based"/>
+                <htm:li><refinement>Specifically defined auditable events selected from <ctr-ref ref-id="atref-sel-based"/>
 			by the ST author corresponding to selection-based requirements included in the Security Target.</refinement></htm:li>
-                <htm:li><refinement>Specifically defined auditable events selected from <ctr-ref ref-id="at-impl-dep"/>
+                <htm:li><refinement>Specifically defined auditable events selected from <ctr-ref ref-id="atref-impl-dep"/>
 			by the ST author corresponding to implementation-based requirements included in the Security Target.</refinement></htm:li>
                 <htm:li><refinement><selectables>
                       <selectable>Audit records reaching <assignable>integer value less than 100</assignable> percentage of audit capacity</selectable>
