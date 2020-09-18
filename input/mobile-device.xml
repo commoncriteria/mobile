@@ -920,8 +920,9 @@ How is it differenet then me using subsection?
       <!-- This displays the audit table for mandatory SFRs at the start of the SFR section -->
       <!-- It doesn't have to be this way. -->
       <subsection title="Auditable Events for Mandatory SFRs" id="ss-audit-events">
-	<audit-table table="mandatory"/>
-        <htm:b><ctr ctr-type="Table" id="atref-mandatory">: Auditable Events for Mandatory Requirements</ctr></htm:b><htm:br/>
+	<audit-table table="mandatory">
+        <ctr ctr-type="Table" id="atref-mandatory">: Auditable Events for Mandatory Requirements</ctr>
+	</audit-table>
       </subsection>
 
       <subsection id="fau" title="Class: Security Audit (FAU)">
