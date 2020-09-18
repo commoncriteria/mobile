@@ -204,7 +204,7 @@ How is it differenet then me using subsection?
       <term full="Auxiliary Boot Modes"> Auxiliary boot modes are states in which the device
         provides power to one or more components to provide an interface that enables an
         unauthenticated user to interact with either a specific component or several components that
-        exist outside of the device’s fully authenticated, operational state.</term>
+        exist outside of the device’s fuauditlly authenticated, operational state.</term>
       <term full="Biometric Authentication Factor" abbr="BAF"> Authentication factor, which uses
         biometric sample, matched to a biometric authentication template to help establish
         identity.</term>
@@ -921,7 +921,7 @@ How is it differenet then me using subsection?
       <!-- It doesn't have to be this way. -->
       <subsection title="Auditable Events for Mandatory SFRs" id="ss-audit-events">
 	<audit-table table="mandatory">
-        <ctr ctr-type="Table" id="atref-mandatory">: Auditable Events for Mandatory Requirements</ctr>
+        <htm:b><ctr ctr-type="Table" id="atref-mandatory">: Auditable Events for Mandatory Requirements</ctr></htm:b>
 	</audit-table>
       </subsection>
 
