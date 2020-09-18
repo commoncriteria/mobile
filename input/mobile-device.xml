@@ -3186,7 +3186,7 @@ How is it differenet then me using subsection?
 		as it is actually included based on a selection in FCS_TLS_EXT.1.1 in the TLS package. -->
 	<!-- So we probably need a way to express this. -->
 	<!-- Assuming this should be the client protocol (FCS_DTLSC_EXT.1) -->
-	<f-component-decl cc-id="fcs_dtlsc_ext.1" name="DTLS Client Protocol" status="optional" pkg-id="pkg_tls">
+	<f-component-decl cc-id="fcs_dtlsc_ext.1" name="DTLS Client Protocol" status="sel-based" pkg-id="pkg_tls">
 		<selection-depends req="fcs-tls-ext-1e1" ids="sel-dtls-client"/>  <!-- the ids must correspond with the selection id in the tls package -->
 		<audit-event>
 			<audit-event-descr>Failure of the certificate validity check.</audit-event-descr>
@@ -3507,7 +3507,7 @@ How is it differenet then me using subsection?
 	<!-- For now status is optional. It may end up being sel-based or mandatory. 
 		as it is actually included based on a selection in FCS_TLS_EXT.1.1 in the TLS package. -->
 	<!-- So we probably need a way to express this. -->
-	<f-component-decl cc-id="fcs_tlsc_ext.1" name="TLS Client Protocol" status="optional" pkg-id="pkg_tls">
+	<f-component-decl cc-id="fcs_tlsc_ext.1" name="TLS Client Protocol" status="sel-based" pkg-id="pkg_tls">
 		<selection-depends req="fcs-tls-ext-1e1" ids="sel-tls-client"/>  <!-- ids must correspond with selection id from tls package   -->
 		<audit-event>
 			<audit-event-descr>Establishment/termination of a TLS session.</audit-event-descr>
@@ -3527,7 +3527,7 @@ How is it differenet then me using subsection?
 	<!-- For now status is optional. It may end up being sel-based or mandatory. 
 		as it is actually included based on a selection in FCS_TLS_EXT.1.1 in the TLS package. -->
 	<!-- So we probably need a way to express this. -->
-	<f-component-decl cc-id="fcs_tlsc_ext.1" name="TLS Client Protocol" status="optional" pkg-id="pkg_tls">
+	<f-component-decl cc-id="fcs_tlsc_ext.1" name="TLS Client Protocol" status="sel-based" pkg-id="pkg_tls">
 		<selection-depends req="fcs-tls-ext-1e1" ids="sel-tls-client"/>  <!-- ids must correspond to selection id in tls package   -->
 		<audit-event>
 			<audit-event-descr>Establishment/termination of a TLS session.</audit-event-descr>
