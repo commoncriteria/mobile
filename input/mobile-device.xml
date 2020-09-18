@@ -921,7 +921,7 @@ How is it differenet then me using subsection?
       <!-- It doesn't have to be this way. -->
       <subsection title="Auditable Events for Mandatory SFRs" id="ss-audit-events">
 	<audit-table table="mandatory">
-        <htm:b><ctr ctr-type="Table" id="atref-mandatory">: Auditable Events for Mandatory Requirements</ctr></htm:b>
+        <htm:br/><htm:b><ctr ctr-type="Table" id="atref-mandatory">: Auditable Events for Mandatory Requirements</ctr></htm:b>
 	</audit-table>
       </subsection>
 
@@ -1325,7 +1325,7 @@ How is it differenet then me using subsection?
             </aactivity>
           </f-element>
 	  <audit-event type="optional">
-		  <audit-event-descr>All modifications to the audit configuration that occur while the audit collection functions are operating.</audit-event-descr>
+		  <audit-event-descr>All modifications to the audit configuration that occur while the audit collection functions are operating</audit-event-descr>
 	  </audit-event>
         </f-component>
 	      
@@ -1553,7 +1553,7 @@ How is it differenet then me using subsection?
             </aactivity>
           </f-element>
 	<audit-event type="optional">
-		<audit-event-descr>Failure of key generation activity for authentication keys.</audit-event-descr>
+		<audit-event-descr>Failure of key generation activity for authentication keys</audit-event-descr>
 	</audit-event>
         </f-component>
 	      
@@ -1879,7 +1879,7 @@ How is it differenet then me using subsection?
             </aactivity>
           </f-element>
 	  <audit-event type="optional">
-		  <audit-event-descr>Generation of an REK.</audit-event-descr>
+		  <audit-event-descr>Generation of an REK</audit-event-descr>
 	  </audit-event>
         </f-component>
 	      
@@ -3252,7 +3252,7 @@ How is it differenet then me using subsection?
 	  <audit-event>
 		  <audit-event-descr>Failure of the certificate validity check.</audit-event-descr>
 		  <audit-event-info>Issuer Name and Subject Name of certificate</audit-event-info>
-		  <audit-event-info type="optional">User's authorization decision.</audit-event-info>
+		  <audit-event-info type="optional">User's authorization decision</audit-event-info>
 	  </audit-event>
         </f-component>
 	      
@@ -3380,7 +3380,7 @@ How is it differenet then me using subsection?
             </aactivity>
           </f-element>
 	  <audit-event type="optional">
-		  <audit-event-descr>Failure of the randomization process.</audit-event-descr>
+		  <audit-event-descr>Failure of the randomization process</audit-event-descr>
 	  </audit-event>		
         </f-component>
 	      
@@ -4162,7 +4162,7 @@ How is it differenet then me using subsection?
             </aactivity>
           </f-element>
 	  <audit-event type="optional">
-		  <audit-event-descr>Failure to encrypt/decrypt data.</audit-event-descr>
+		  <audit-event-descr>Failure to encrypt/decrypt data</audit-event-descr>
 	  </audit-event>
         </f-component>
 		    
@@ -4552,7 +4552,7 @@ How is it differenet then me using subsection?
             </aactivity>
           </f-element>
 	  <audit-event>
-		<audit-event-descr>Application initiation of trusted channel.	</audit-event-descr>
+		<audit-event-descr>Application initiation of trusted channel.</audit-event-descr>
 		<audit-event-info>Name of application. </audit-event-info>
 		<audit-event-info>Trusted channel protocol.</audit-event-info>
 		<audit-event-info>Non-TOE endpoint of connection.</audit-event-info>
@@ -4713,7 +4713,7 @@ How is it differenet then me using subsection?
             </aactivity>
           </f-element>
 	  <audit-event type="optional">
-		  <audit-event-descr>Excess of authentication failure limit.</audit-event-descr>
+		  <audit-event-descr>Excess of authentication failure limit</audit-event-descr>
 		  <audit-event-info>Authentication factor used.</audit-event-info>
 	  </audit-event>
         </f-component>
@@ -5234,7 +5234,7 @@ How is it differenet then me using subsection?
             </aactivity>
           </f-element>
   	  <audit-event type="optional">
-		<audit-event-descr>User changes Password Authentication Factor.</audit-event-descr>
+		<audit-event-descr>User changes Password Authentication Factor</audit-event-descr>
 	</audit-event>
         </f-component>
 	      
@@ -5369,7 +5369,7 @@ How is it differenet then me using subsection?
             </aactivity>
           </f-element>
   	  <audit-event type="optional">
-		<audit-event-descr>Action performed before authentication.</audit-event-descr>
+		<audit-event-descr>Action performed before authentication</audit-event-descr>
 	  </audit-event>
         </f-component>
 	      
@@ -5601,7 +5601,7 @@ How is it differenet then me using subsection?
             </aactivity>
           </f-element>
 	  <audit-event type="optional">
-		  <audit-event-descr>Failure to establish connection to determine revocation status.</audit-event-descr>
+		  <audit-event-descr>Failure to establish connection to determine revocation status</audit-event-descr>
 	  </audit-event>
         </f-component>
 	      
@@ -5755,18 +5755,18 @@ How is it differenet then me using subsection?
             </aactivity>
           </f-element>
 	  <audit-event type="optional">
-		  <audit-event-descr>Generation of Certificate Enrollment Request.</audit-event-descr>
+		  <audit-event-descr>Generation of Certificate Enrollment Request</audit-event-descr>
 		  <audit-event-info>Issuer and Subject name of EST Server.</audit-event-info>
 		  <audit-event-info>Method of authentication.</audit-event-info>
 		  <audit-event-info>Issuer and Subject name of certificate used to authenticate.</audit-event-info>
 		  <audit-event-info>Content of Certificate Request Message.</audit-event-info>
 	  </audit-event>
 	  <audit-event type="optional">
-		  <audit-event-descr>Success or failure of enrollment.</audit-event-descr>
+		  <audit-event-descr>Success or failure of enrollment</audit-event-descr>
 		  <audit-event-info>Issuer and Subject name of added certificate or reason for failure.</audit-event-info>
 	  </audit-event>
 	  <audit-event type="optional">
-		  <audit-event-descr>Update of EST Trust Anchor Database.</audit-event-descr>
+		  <audit-event-descr>Update of EST Trust Anchor Database</audit-event-descr>
 		  <audit-event-info>Subject name of added Root CA.</audit-event-info>
 	  </audit-event>
         </f-component>
@@ -7039,11 +7039,11 @@ How is it differenet then me using subsection?
             </aactivity>
           </f-element>
 	  <audit-event type="optional">
-		<audit-event-descr>Initiation of policy update.</audit-event-descr>
+		<audit-event-descr>Initiation of policy update</audit-event-descr>
 		<audit-event-info type="optional">Policy name</audit-event-info>
 	  </audit-event>
 	  <audit-event type="optional">
-		<audit-event-descr>Change of settings.</audit-event-descr>
+		<audit-event-descr>Change of settings</audit-event-descr>
 		<audit-event-info type="optional">Role of user that changed setting</audit-event-info>
 		<audit-event-info type="optional">Value of new setting</audit-event-info>
 	  </audit-event>
@@ -7054,12 +7054,12 @@ How is it differenet then me using subsection?
 		<audit-event-info type="optional">Reason for failure</audit-event-info>
 	  </audit-event>
 	  <audit-event type="optional">
-		<audit-event-descr>Initiation of software update.</audit-event-descr>
-		<audit-event-info type="optional">Version of update.</audit-event-info>
+		<audit-event-descr>Initiation of software update</audit-event-descr>
+		<audit-event-info type="optional">Version of update</audit-event-info>
 	  </audit-event>
 	  <audit-event type="optional">
-		<audit-event-descr>Initiation of application installation or update.</audit-event-descr>
-		<audit-event-info type="optional">Name and version of application.</audit-event-info>
+		<audit-event-descr>Initiation of application installation or update</audit-event-descr>
+		<audit-event-info type="optional">Name and version of application</audit-event-info>
 	  </audit-event>
         </f-component>
 	      
@@ -7852,8 +7852,8 @@ How is it differenet then me using subsection?
 		  <audit-event-descr>Start-up of TOE.</audit-event-descr>
 	  </audit-event>
 	  <audit-event type="optional">
-		  <audit-event-descr>Detected integrity violation.</audit-event-descr>
-		  <audit-event-info type="optional">The TSF code file that caused the integrity violation.</audit-event-info>
+		  <audit-event-descr>Detected integrity violation</audit-event-descr>
+		  <audit-event-info type="optional">The TSF code file that caused the integrity violation</audit-event-info>
 	  </audit-event>
         </f-component>
 	      
@@ -7887,7 +7887,7 @@ How is it differenet then me using subsection?
           </f-element>
 	  <audit-event>
 		  <audit-event-descr>Detected integrity violation.</audit-event-descr>
-		  <audit-event-info type="optional">The TSF code file that caused the integrity violation.</audit-event-info>
+		  <audit-event-info type="optional">The TSF code file that caused the integrity violation</audit-event-info>
 	  </audit-event>
         </f-component>
 	      
@@ -8066,10 +8066,10 @@ How is it differenet then me using subsection?
             </aactivity>
           </f-element>
 	  <audit-event type="optional">
-		  <audit-event-descr>Success or failure of signature verification for software updates.</audit-event-descr>
+		  <audit-event-descr>Success or failure of signature verification for software updates</audit-event-descr>
 	  </audit-event>
 	  <audit-event type="optional">
-		  <audit-event-descr>Success or failure of signature verification for applications.</audit-event-descr>
+		  <audit-event-descr>Success or failure of signature verification for applications</audit-event-descr>
 	  </audit-event>
         </f-component>
 	      
@@ -8370,7 +8370,7 @@ How is it differenet then me using subsection?
             </aactivity>
           </f-element>
 	  <audit-event type="optional">
-		  <audit-event-descr>Initiation and termination of trusted channel.</audit-event-descr>
+		  <audit-event-descr>Initiation and termination of trusted channel</audit-event-descr>
 		  <audit-event-info>Trusted channel protocol.</audit-event-info>
 		  <audit-event-info>Non-TOE endpoint of connection.</audit-event-info>
 	  </audit-event>		  
