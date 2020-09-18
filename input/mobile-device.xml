@@ -1184,11 +1184,12 @@ How is it differenet then me using subsection?
               mandatory for FMT_MOF_EXT.1.2 (i.e. ‘M-MM’ in <ctr-ref ref-id="fmt_smf"/>). If the TSF
               does not support removable media, number 4 is implicitly met. <htm:br/><htm:br/> The
               TSF shall generate an audit record for all events contained in <ctr-ref
-                ref-id="manaudit"/> unless an ST author selection allows otherwise. <htm:br/><htm:br/>
-		All auditable events in <ctr-ref ref-id="opaudit"/>, <ctr-ref ref-id="objaudit"/>,
-		    <ctr-ref ref-id="sbaudit"/>, and <ctr-ref ref-id="sbaudit"/> are individually selectable by the ST author,
+                ref-id="atref-mandatory"/> unless an ST author selection allows otherwise. <htm:br/><htm:br/>
+		All auditable events in <ctr-ref ref-id="atref-optional"/>, <ctr-ref ref-id="atref-objective"/>,
+		    <ctr-ref ref-id="atref-sel-based"/>, and <ctr-ref ref-id="atref-sel-based"/> are individually
+		    selectable by the ST author,
 		    and are considered to be objective. <htm:br/><htm:br/>
-              <htm:b><ctr-ref ref-id="manaudit"/> Application Note:</htm:b><htm:br/> FPT_TST_EXT.1 –
+              <htm:b><ctr-ref ref-id="atref-mandatory"/> Application Note:</htm:b><htm:br/> FPT_TST_EXT.1 –
               Audit of self-tests is required only at initial start-up. Since the TOE "transitions
               to non-operational mode" upon failure of a self-test, per FPT_NOT_EXT.1, this is
               considered equivalent evidence to an audit record for the failure of a self-test.
@@ -1197,7 +1198,7 @@ How is it differenet then me using subsection?
               encryption/decryption fails. If the TOE utilizes file-based encryption for protected
               data and audits when this encryption/decryption fails, then that auditable event shall
               be selected.<htm:br/><htm:br/>
-              <htm:b><ctr-ref ref-id="objaudit"/> Application Note:</htm:b>
+              <htm:b><ctr-ref ref-id="atref-objective"/> Application Note:</htm:b>
               <htm:br/> If the audit event for FMT_SMF_EXT.1 is included in the ST, it is acceptable
               for the initiation of the software update to be audited without indicating the outcome
               (success or failure) of the update.<htm:br/>
@@ -1217,7 +1218,7 @@ How is it differenet then me using subsection?
               type is often indicated by a severity level, for example, ‘info’, ‘warning’, or
               ‘error’. <htm:br/><htm:br/> If "no additional auditable events" is selected in the
               second selection of FAU_GEN.1.1, then "no additional information" shall be selected.
-              <htm:br/><htm:br/> For each audit event selected from <ctr-ref ref-id="objaudit"/> in
+              <htm:br/><htm:br/> For each audit event selected from <ctr-ref ref-id="atref-objective"/> in
               FAU_GEN.1.1 if additional information is required to be recorded within the audit
               record, it should be included in this selection. </note>
             <aactivity>
