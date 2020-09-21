@@ -3187,7 +3187,7 @@ How is it differenet then me using subsection?
 	<!-- So we probably need a way to express this. -->
 	<!-- Assuming this should be the client protocol (FCS_DTLSC_EXT.1) -->
 	<f-component-decl cc-id="fcs_dtlsc_ext.1" name="DTLS Client Protocol" status="sel-based" pkg-id="pkg_tls">
-		<selection-depends req="fcs_tls_ext.1.1" ids="dtlsc-impl"/>  <!-- ids and req must correspond with the values in the tls package -->
+		<selection-depends req="fcs_tls_ext-1e1" ids="dtlsc-impl"/>  <!-- ids and req must correspond with the values in the tls package -->
 		<audit-event>
 			<audit-event-descr>Failure of the certificate validity check.</audit-event-descr>
 			<audit-event-info>Issuer Name and Subject Name of certificate.</audit-event-info>
@@ -3508,7 +3508,7 @@ How is it differenet then me using subsection?
 		as it is actually included based on a selection in FCS_TLS_EXT.1.1 in the TLS package. -->
 	<!-- So we probably need a way to express this. -->
 	<f-component-decl cc-id="fcs_tlsc_ext.1" name="TLS Client Protocol" status="sel-based" pkg-id="pkg_tls">
-		<selection-depends req="fcs_tls_ext.1.1" ids="tlsc-impl"/>  <!-- ids must correspond with selection id from tls package   -->
+		<selection-depends req="fcs_tls_ext-1e1" ids="tlsc-impl"/>  <!-- ids must correspond with selection id from tls package   -->
 		<audit-event>
 			<audit-event-descr>Establishment/termination of a TLS session.</audit-event-descr>
 			<audit-event-info>Non-TOE endpoint of connection.</audit-event-info>
@@ -3528,7 +3528,7 @@ How is it differenet then me using subsection?
 		as it is actually included based on a selection in FCS_TLS_EXT.1.1 in the TLS package. -->
 	<!-- So we probably need a way to express this. -->
 	<f-component-decl cc-id="fcs_tlsc_ext.1" name="TLS Client Protocol" status="sel-based" pkg-id="pkg_tls">
-		<selection-depends req="fcs_tls_ext.1.1" ids="tlsc-impl"/>  <!-- ids and req must correspond to values in the tls package   -->
+		<selection-depends req="fcs_tls_ext-1e1" ids="tlsc-impl"/>  <!-- ids and req must correspond to values in the tls package   -->
 		<audit-event>
 			<audit-event-descr>Establishment/termination of a TLS session.</audit-event-descr>
 			<audit-event-info>Non-TOE endpoint of connection.</audit-event-info>
